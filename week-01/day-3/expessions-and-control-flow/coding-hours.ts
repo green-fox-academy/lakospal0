@@ -13,10 +13,12 @@ let codinPerWeek:number;
 let codinPerSemester:number;
 codinPerWeek= 5*6;
 codinPerSemester=17*codinPerWeek;
-console.log(codinPerSemester)
+console.log(codinPerSemester);
 
 let fullSemesterHour:number;
 let avgCodinSemester:number;
+let percentage:number;
 fullSemesterHour=17*52;
 avgCodinSemester=(codinPerSemester/ fullSemesterHour)*100;
-console.log(avgCodinSemester)
+percentage=Math.floor(avgCodinSemester)
+console.log(percentage + "%");
