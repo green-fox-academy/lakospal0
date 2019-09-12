@@ -1,0 +1,92 @@
+body {
+    background-color: rgba(194, 109, 109, 0.89);
+    margin: 0;
+}
+
+.container{
+    width: 75%;
+    margin: 0 auto;
+}
+
+.header{
+    background-color: blue;
+    padding: 0;
+    border: solid;
+    border-width: 2px;
+    height: 50px;
+}
+
+#blog {
+    padding:2px 0 0 6.4%;
+
+}
+
+.posts{
+    font-size: 22px;
+}
+
+.title-content{
+    font-weight: bold;
+}
+
+#title {
+    display: block;
+}
+
+#content{
+    display: block;
+}
+
+.content {
+    padding-bottom: 5px;
+}
+
+.title-border{
+    padding: 0px 0 0 3px;
+    background-color: rgba(194, 109, 109, 0.89);
+    border: solid;
+    border-width: 1.5px;
+}
+.border{
+    padding: 5px 0 0 5px;
+    background-color: rgba(194, 109, 109, 0.89);
+    border: solid;
+    border-width: 1.5px;
+}
+
+.shit {
+    padding: 10px 0px 20px 0px;
+}
+
+.loremipsum{
+    padding: 5px 0 0 5px;
+    background-color: rgba(194, 109, 109, 0.89);
+    border: solid;
+    border-width: 1.5px;
+    padding: 0px 0px 2px 0px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+p {
+    margin: 0;
+}
+
+.post{
+    margin: 15px 0 15px 0;
+    font-size: 22px;
+}
+
+.button {
+    background-color: rgba(219, 121, 121, 0.719); 
+    border: solid;
+    border-radius: 10%;
+    border-width: 1px;
+}
