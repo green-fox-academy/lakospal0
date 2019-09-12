@@ -1,4 +1,6 @@
 'use strict';
 
 // Modify this program to greet you instead of the World!
-console.log('Hello Pál Lakos');
+let greetMe:string;
+greetMe="csa ";
+console.log(greetMe);
