@@ -1,11 +1,14 @@
 'use strict';
 
 let number: number = 15;
-let loopy: number = 1;
-while (loopy<11){
+let loopy: number;
+for(loopy=1; loopy<11; loopy++){
+    console.log(loopy+" * "+number+" = "+number*loopy)
+}
+/*while (loopy<11){
     console.log(loopy+" * "+number+" = "+number*loopy)
     loopy++;
-}
+}*/
 
 // Create a program that
 // prints the multiplication table with number
