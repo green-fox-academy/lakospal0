@@ -45,8 +45,8 @@ console.log(c);
 // if is_bonus is true c should remain the same
 //---------------------------------------------------------------------------------------
 
-let d: number = 8;
-let time: number = 120;
+let d: number = 1212;
+let time: number = 500;
 let out3: string = '';
 
 if (d%4==0 && time<=200){
