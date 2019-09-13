@@ -1,6 +1,6 @@
 'use strict';
 
-let write: number = 0;
+let write: number = 1;
 
 while (write <= 100) {
     console.log(write + " I won't cheat on the exam")
