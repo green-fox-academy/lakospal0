@@ -6,4 +6,4 @@ let drinks: string[] = ["Gin", "Whiskey", "Wine", "Beer"];
 drinks.forEach(function(value){
     value= value + value;
     console.log(value);
-});
+})
