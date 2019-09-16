@@ -3,10 +3,10 @@
 //     -  Greeting is printing e.g. `Greetings, dear Green Fox`
 // -  Greet `nameToGreet`
 
-let nameToGreet: string = "Green Fox";
+let nameToGreet : string = "Green Fox";
 
-function greet(a){
-    a= "Greetings, dear "+ nameToGreet;
-    console.log(a);
+function greet(name){
+    console.log("Greetings, dear " + name)
 }
-greet(nameToGreet);
+
+greet (nameToGreet);
