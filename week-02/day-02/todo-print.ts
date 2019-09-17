@@ -15,7 +15,7 @@ let preDownloadText: string;
 
 function text(thingy) {
     preDownloadText = thingy.substring(0, 11);
-    thingy = "My todo: \n" + preDownloadText + "\n" + " -Download games \n" + "\t- Diablo";
+    thingy = "My todo: \n" + preDownloadText + "\n" + " - Download games \n" + "\t- Diablo";
     return thingy;
 }
 console.log(text(todoText));
