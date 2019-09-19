@@ -13,9 +13,9 @@ const ctx = canvas.getContext('2d');
 let colors:string[]=["magenta", "blue","yellow","green"];
 
 function square(x,color) {
-    ctx.strokeStyle = color;
-    ctx.strokeRect((canvas.width/2)-x/2,(canvas.height/2)-x/2, x, x)
-    ctx.stroke();
+    ctx.fillStyle = color;
+    ctx.fillRect((canvas.width/2)-x/2,(canvas.height/2)-x/2, x, x)
+    ctx.fill();
 }
 
 let i: number;
