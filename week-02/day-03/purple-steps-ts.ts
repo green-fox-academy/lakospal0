@@ -13,7 +13,7 @@ function square(x,y,){
     ctx.beginPath();
     ctx.strokeStyle="black";
     ctx.fillStyle="purple";
-    ctx.strokeRect(x-1,y-1,22,22);
+    ctx.strokeRect(x,y,20,20);
     ctx.fillRect(x,y,20,20);
     ctx.fill();
     ctx.stroke();
