@@ -11,28 +11,30 @@ function checker(width, height, color, size) {
     ctx.fillStyle = color;
     ctx.strokeRect(width, height, size, size);
     ctx.fillRect(width, height, size, size);
-    ctx.fill()
+    ctx.fill();
 }
 
 let i: number;
 let col: string;
 let size: number = 40;
-let szaft=0;
-let stopThing:number;
+let k: number;
 
-for (i = 0; i == 600; i += 40) {
-    if (i % 80 == 0) {
-        col = "white"}
-    else{col = "black"}
-    if(i==600){
-        szaft+=size;
-        i=0;
+for (k = 0; k <= 400; k += 40) {
+    for (i = 0; i <= 600; i += 40) {
+        //2. sor, 1. 2. elem
+        if (i % 80 == 0 && k % 80 == 0) {
+            col = "white";
+        } else if (i % 80 !== 0 && k % 80 == 0) {
+            col = "black";
+        }
+        //2. sor 1. 2. elem
+        else if (i % 80 == 0 && k % 80 !== 0) {
+            col = "black";
+        } else if (i % 80 !== 0 && k % 80 !== 0) {
+            col = "white";
+        }
+        checker(i, k, col, size)
     }
-    checker(i, szaft, col, size)
 }
 
-for (stopThing=0;stopThing==10;stopThing++){
-    if(stopThing==10){
-        i==0;
-    }
-}
+
