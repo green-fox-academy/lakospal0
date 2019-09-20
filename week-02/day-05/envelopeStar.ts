@@ -3,28 +3,7 @@
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
-let canvHeight: number = canvas.height;
-let canvWidth: number = canvas.width;
 
-function fusRoDah(x, y) {
-    ctx.beginPath();
-    ctx.strokeStyle = " black";
-    ctx.moveTo(x, 0);
-    ctx.lineTo(x, y);
-    ctx.stroke();
-}
-
-fusRoDah(canvWidth / 2, canvHeight);
-
-function fusRoDah2(x, y) {
-    ctx.beginPath();
-    ctx.strokeStyle = " black";
-    ctx.moveTo(0, y);
-    ctx.lineTo(x, y);
-    ctx.stroke();
-}
-
-fusRoDah2(canvWidth, canvHeight / 2);
 
 function botLeft(x, y, q, w) {
     ctx.beginPath();
@@ -87,6 +66,13 @@ function topRight(trmvX, trmvY, trlnX, trlnY) {
     ctx.moveTo(trmvX, trmvY);
     ctx.lineTo(trlnX,trlnY);
     ctx.stroke();
-
 }
 
+let trmvY:number=canvas.height/2;
+let trlnX:number=canvas.width/2;
+let trlnY:number=canvas.height/2;
+
+for(let trmvX=canvas.width;trmvX>=canvas.width/2;trmvX-=10){
+    trlnY-=10
+    topRight(trmvX,trmvY,trlnX,trlnY)
+}
