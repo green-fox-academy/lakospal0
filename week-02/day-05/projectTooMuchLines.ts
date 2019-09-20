@@ -3,7 +3,7 @@
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
-function vertLines(x, y, q, w) {
+function purpleLines(x, y, q, w) {
     ctx.beginPath();
     ctx.strokeStyle = "purple";
     ctx.moveTo(x, y);
@@ -13,7 +13,7 @@ function vertLines(x, y, q, w) {
 
 let i: number;
 for (i = 600; i > 100; i -= 15) {
-    vertLines(i, 5, 590, i - 90)
+    purpleLines(i, 5, 590, i - 90)
 }
 
 function greenLines(x, y, q, w) {
