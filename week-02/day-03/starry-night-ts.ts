@@ -13,13 +13,14 @@ const ctx = canvas.getContext('2d');
 
 let rectWidthAndHight: number = 3;
 
+
+function createRect(x: number, y: number, widthAndHeight: number) {
+    ctx.fillRect(x, y, widthAndHeight, widthAndHeight);
+    ctx.fillStyle = "white";
+}
 for (let i: number = 0; i <= 100; i++) {
     let randomStarsY: number = Math.floor(Math.random() * canvas.width) + 1
     let randomStarsX: number = Math.floor(Math.random() * canvas.width) + 1
-    function createRect(x: number, y: number, widthAndHeight: number) {
-        ctx.fillRect(x, y, widthAndHeight, widthAndHeight);
-        ctx.fillStyle = "white";
-    }
     createRect(randomStarsX,randomStarsY,rectWidthAndHight);
 }
 
