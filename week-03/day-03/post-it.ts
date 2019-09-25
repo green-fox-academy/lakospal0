@@ -1,7 +1,7 @@
 class PostIt {
-    backgroundColor: string;
-    text: string;
-    textColor: string;
+    private backgroundColor: string;
+    private text: string;
+    private textColor: string;
     constructor(backGroundColor: string, text: string, textColor: string) {
         this.backgroundColor = backGroundColor;
         this.text = text;
