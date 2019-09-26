@@ -39,26 +39,7 @@ class DiceSet {
   
   let diceSet = new DiceSet();
   diceSet.roll();
-  /*
-  console.log(diceSet.roll());
-  console.log(diceSet.getCurrent());
-  
-  console.log("------------------");
-  
-  diceSet.reroll();
-  console.log(diceSet.getCurrent());
-  
-  console.log("------------------");
-  
-  console.log(diceSet.getCurrent(5));
-  diceSet.reroll();
-  console.log(diceSet.getCurrent());
-  
-  console.log("------------------");
-  
-  diceSet.reroll(4);
-  console.log(diceSet.getCurrent());
-*/
+
   /* Rotáljunk át a kockákon */
   for (let i = 0; i < diceSet.numOfDices; i++) {
 
@@ -68,4 +49,3 @@ class DiceSet {
       }
       console.log(diceSet.getCurrent(i));
   }
- 
