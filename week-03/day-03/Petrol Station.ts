@@ -1,22 +1,22 @@
 class Station {
-    gasAmount:number;
-    
-    constructor (){
+    gasAmount: number;
+
+    constructor() {
         this.gasAmount = 500;
     }
 
-    refill(car:Car){
-        this.gasAmount --;
-        car.gasAmount ++;
+    refill(car: Car) {
+        this.gasAmount--;
+        car.gasAmount++;
     }
 }
 
 class Car {
-    gasAmount:number;
-    capacity:number;
-    constructor(){
-        this.gasAmount=0;
-        this.capacity=100;
+    gasAmount: number;
+    capacity: number;
+    constructor() {
+        this.gasAmount = 0;
+        this.capacity = 100;
     }
 
 }
