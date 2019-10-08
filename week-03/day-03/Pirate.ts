@@ -5,10 +5,12 @@ export class Pirate {
   protected _name: string;
   protected _rumCounter: number = 0;
   protected _isDead: boolean;
+  protected _isCaptain:boolean;
 
-  constructor(name: string, isDead: boolean = false, ) {
+  constructor(name: string,isCaptain:boolean=false, isDead: boolean = false, ) {
     this._name = name;
     this._isDead = isDead;
+    this._isCaptain= isCaptain;
   }
   public drinkSomeRum(): number {
     if (this._isDead == true) {
