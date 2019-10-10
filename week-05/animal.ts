@@ -4,13 +4,16 @@ export class Animal {
   protected _ownerName: string;
   protected _animalName: string;
   protected _isHealthy: boolean;
-  protected _healCost: number = 1;
+  protected _healCost: number;
 
   constructor(animalName: string, ownerName: string, isHealthy: boolean, healCost: number) {
     this._animalName = animalName;
     this._ownerName = ownerName;
     this._isHealthy = isHealthy;
     this._healCost = healCost;
+  }
+  get healCost():number{
+    return this._healCost;
   }
   get isHealthy(): boolean {
     return this._isHealthy;
