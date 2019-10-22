@@ -1,0 +1,46 @@
+.header {
+    background-color: purple;
+    width: 1246px;
+    height: 100px;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+.item {
+    list-style-type: none;
+    width: 100px;
+    height: 35px;
+    margin: 35px 0 35px;
+    background-color: aqua;
+}
+
+.one {
+    width: 135px;
+    margin-right: 20px;
+    margin-left: 35px;
+}
+
+.two {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.item.three {
+    width: 120px;
+}
+
+.container {
+    display: flex;
+    background: orange;
+    width: 1246px;
+    height: 600px;
+    justify-content: right;
+}
+
+.green {
+    height: 100%;
+    width: 30%;
+    background-color: green;
+}

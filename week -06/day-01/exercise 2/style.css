@@ -1,0 +1,24 @@
+body {}
+
+.container {
+    background: orange;
+    width: 1246px;
+    height: 700px;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.item {
+    max-width: 100px;
+    height: 100px;
+    margin: 0px;
+    padding: 0px;
+    align-self: center;
+}
+
+.item.purple {
+    flex-grow: 1;
+    background-color: purple;
+}
