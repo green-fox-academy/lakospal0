@@ -44,11 +44,18 @@ app.get('/greeter', function(req, res) {
 
 
 app.get('/appenda/:appendable', function(req, res) {
-    var appendable = req.params.appendable;
-    var append = {
-        "appended": appendable + "a"
+    if (req.params.appendable) {
+        var appendable = req.params.appendable;
+        var append = {
+            "appended": appendable + "a"
+        }
     }
     res.send(append);
+})
+
+app.get('/appenda', function(req, res) {
+    res.status(404);
+    res.send();
 })
 
 app.listen(PORT, () => {
