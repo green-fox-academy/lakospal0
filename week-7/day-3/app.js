@@ -58,6 +58,19 @@ app.get('/appenda', function(req, res) {
     res.send();
 })
 
+app.get('/dountil/:action', function(req, res) {
+    if (req.params.action == 'sum') {
+        let counter = number.until.valueOf;
+        for (let i = number.until.valueOf; i <= 0; i--) {
+            counter = i;
+        }
+        var number = {
+            "until": 5
+        }
+    }
+    res.send(counter)
+})
+
 app.listen(PORT, () => {
     console.log(`The server is up and running on ${PORT}`);
 });
