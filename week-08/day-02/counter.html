@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: EventListeners</title>
+</head>
+
+<body>
+    <ul>
+        <li>apple</li>
+        <li>balloon</li>
+        <li>cat</li>
+        <li>dolphin</li>
+    </ul>
+    <button>How many items are in the list?</button>
+    <p class="result">dunno :(</p>
+
+    <!-- You can work in the html or in a separate js file. Like: -->
+    <script>
+        const btn = document.querySelector('button');
+        const lists = document.querySelectorAll('li');
+        const result = document.querySelector('.result');
+        const result2 = document.getElementsByClassName('result');
+        btn.addEventListener('click', function() {
+                let counter = 0
+                for (let i = 1; i < lists.length + 1; i++) {
+                    counter++;
+                }
+                console.log(result);
+                console.log(result2)
+                result.innerHTML = "the result is : " + counter;
+            })
+            /* On the click of the button,
+                                Count the items in the list
+                                And display the result in the result element. */
+    </script>
+</body>
+
+</html>
