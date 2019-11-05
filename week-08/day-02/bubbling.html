@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: EventListeners</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            text-align: center;
+        }
+        
+        button {
+            margin: 16px;
+        }
+        
+        .img-inspector {
+            margin: 0 auto;
+            width: 500px;
+            height: 320px;
+            border: 1px solid #3a3a3a;
+            background-image: url("https://media.tdc.travel/tdc_media/tmp/new/1561647251.500.RCI-500x300-02.jpg");
+            background-size: 110%;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <button data-action="move" data-direction="up">Up</button>
+        <button data-action="move" data-direction="down">Down</button>
+        <button data-action="move" data-direction="left">Left</button>
+        <button data-action="move" data-direction="right">Right</button>
+        <button data-action="zoom" data-direction="in">Zoom in</button>
+        <button data-action="zoom" data-direction="out">Zoom out</button>
+    </nav>
+    <div class="img-inspector">
+    </div>
+
+    <script>
+        const stylo = document.querySelector('.img-inspector');
+        const nav = document.querySelector('nav');
+        let asder = 100;
+        let u = 0;
+        let d = 0;
+        let r = 0;
+        let l = 0;
+        nav.addEventListener('click', function(e) {
+                if (e.target.attributes[1].value == 'in') {
+                    asder += 50;
+                    stylo.style.backgroundSize = asder + "%";
+                }
+                if (e.target.attributes[1].value == 'out') {
+                    asder -= 50;
+                    stylo.style.backgroundSize = asder + "%";
+                }
+                if (e.target.attributes[1].value == 'up') {
+                    u += 50;
+                    stylo.style.margin = u, 0, 0, 0 + 'px';
+                }
+                if (e.target.attributes[1].value == 'down') {
+                    console.log('asd')
+                }
+                if (e.target.attributes[1].value == 'left') {
+                    console.log('lel')
+                }
+                if (e.target.attributes[1].value == 'right') {
+                    console.log('asd')
+                }
+            })
+            /*Here is an image inspector, but the buttons are not implemented yet, that will
+                  be your task!
+                   - the nav buttons (up, down, left, right) move the background by 10px
+                   - the zoom buttons increase/decrease the image by 20%
+                   - attach only two event listeners to the nav element
+                     - one for navigation
+                     - one for zooming*/
+    </script>
+</body>
+
+</html>
