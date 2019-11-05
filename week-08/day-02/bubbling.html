@@ -26,6 +26,7 @@
             border: 1px solid #3a3a3a;
             background-image: url("https://media.tdc.travel/tdc_media/tmp/new/1561647251.500.RCI-500x300-02.jpg");
             background-size: 110%;
+            background-position: 50% 50%;
             background-repeat: no-repeat;
         }
     </style>
@@ -47,8 +48,8 @@
         const stylo = document.querySelector('.img-inspector');
         const nav = document.querySelector('nav');
         let asder = 100;
-        let u = 0;
-        let d = 0;
+        let Counter = 50;
+        let = 0;
         let r = 0;
         let l = 0;
         nav.addEventListener('click', function(e) {
@@ -61,16 +62,26 @@
                     stylo.style.backgroundSize = asder + "%";
                 }
                 if (e.target.attributes[1].value == 'up') {
-                    u += 50;
-                    stylo.style.margin = u, 0, 0, 0 + 'px';
+                    Counter += 40;
+                    const posString = Counter + '%';
+                    stylo.style.backgroundPosition = "50%" + posString;
                 }
                 if (e.target.attributes[1].value == 'down') {
+                    Counter -= 40;
+                    const posString = Counter + '%';
+                    stylo.style.backgroundPosition = "50%" + posString;
                     console.log('asd')
                 }
                 if (e.target.attributes[1].value == 'left') {
+                    Counter += 40;
+                    const posString = Counter + '%';
+                    stylo.style.backgroundPosition = posString + "50%";
                     console.log('lel')
                 }
                 if (e.target.attributes[1].value == 'right') {
+                    Counter -= 40;
+                    const posString = Counter + '%';
+                    stylo.style.backgroundPosition = posString + "50%";
                     console.log('asd')
                 }
             })
