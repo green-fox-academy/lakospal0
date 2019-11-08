@@ -20,10 +20,9 @@ conn.connect(function(err) {
 });
 
 const app = express();
+app.use(express.json());
 
-
-app.use(express.json())
-
+//first task
 app.get('/hello', function(req, res) {
     res.send("hello :)");
 })
@@ -66,7 +65,6 @@ app.put('/posts/:id/upvote', function(req, res) {
 })
 
 //DOWNVOTE
-
 app.put('/posts/:id/downvote', function(req, res) {
     //const score = `SELECT score FROM reddit.reddit_posts WHERE id=${req.params.id}`;
     //conn.query(score, (err, scoreresult) => {
