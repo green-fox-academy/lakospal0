@@ -39,7 +39,10 @@ app.get('/posts', (req, res) => {
 
 // ADD NEW POST
 app.post('/posts', function(req, res) {
-    const queryString = `INSERT INTO reddit.reddit_posts (title, url, score) VALUES ('${req.body.title}', '${req.body.url}', '0')`
+    const title = conn.escape(req.body.title);
+    const url = conn.escape(req.body.url);
+    //`UNIX_TIMESTAMP(timestamp)` idk where
+    const queryString = `INSERT INTO reddit.reddit_posts (title, url, score) VALUES (?, ?, '0')` [req.body.title, req.body.url]
     conn.query(queryString, (err, result) => {
         const query = `SELECT * FROM reddit.reddit_posts WHERE id=${result.insertId}`
         conn.query(query, (err, post) => {
@@ -51,11 +54,11 @@ app.post('/posts', function(req, res) {
 });
 
 //UPVOTE
-
 app.put('/posts/:id/upvote', function(req, res) {
-    const queryString = `UPDATE reddit.reddit_posts SET score = score + 1 WHERE id = ${req.params.id}`;
+    const upvoteId = conn.escape(req.params.id);
+    const queryString = `UPDATE reddit.reddit_posts SET score = score + 1 WHERE id = ${upvoteId}`;
     conn.query(queryString, () => {
-        const query = `SELECT * FROM reddit.reddit_posts WHERE id=${req.params.id}`
+        const query = `SELECT * FROM reddit.reddit_posts WHERE id=${upvoteId}`
         conn.query(query, (err, post) => {
             res.setHeader("Content-type", "application/json");
             res.status(200);
@@ -68,9 +71,10 @@ app.put('/posts/:id/upvote', function(req, res) {
 app.put('/posts/:id/downvote', function(req, res) {
     //const score = `SELECT score FROM reddit.reddit_posts WHERE id=${req.params.id}`;
     //conn.query(score, (err, scoreresult) => {
-    const queryString = `UPDATE reddit.reddit_posts SET score = score - 1 WHERE id = ${req.params.id}`;
+    const downvoteId = conn.escape(req.params.id);
+    const queryString = `UPDATE reddit.reddit_posts SET score = score - 1 WHERE id = ${downvoteId}`;
     conn.query(queryString, () => {
-        const query = `SELECT * FROM reddit.reddit_posts WHERE id=${req.params.id}`
+        const query = `SELECT * FROM reddit.reddit_posts WHERE id=${downvoteId}`
         conn.query(query, (err, post) => {
             res.setHeader("Content-type", "application/json");
             res.status(200);
