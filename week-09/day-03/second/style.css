@@ -1,0 +1,35 @@
+#wrapper {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.yellow {
+    flex-grow: 2;
+    height: 100px;
+    background: yellow;
+}
+
+.purple {
+    flex-grow: 1;
+    height: 100px;
+    background: purple;
+    max-width: 100px;
+}
+
+.green {
+    flex-grow: 1;
+    height: 100px;
+    background: green;
+    max-width: 100px;
+}
+
+@media screen and (max-width:550px) {
+    .item {
+        min-width: 100%;
+    }
+    #wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}
