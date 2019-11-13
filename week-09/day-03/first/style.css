@@ -1,0 +1,52 @@
+body {
+    background: blue;
+}
+
+table {
+    margin: 2% auto;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid rgba(0, 0, 0, 0.247);
+    border-collapse: collapse;
+    -webkit-box-shadow: 1px 32px 32px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 32px 32px -25px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 32px 32px -25px rgba(0, 0, 0, 0.75);
+    ;
+}
+
+thead {
+    background: black;
+    color: white;
+    border-radius: 10px;
+}
+
+tbody tr:nth-child(even) {
+    background: white;
+}
+
+tbody tr:nth-child(odd) {
+    background: whitesmoke;
+}
+
+.data-currency:before {
+    content: "$ ";
+}
+
+.data-currency:after {
+    content: ".00";
+}
+
+table,
+th,
+td {
+    border: 2px solid gray;
+    border-radius: 50px;
+}
+
+td,
+th {
+    text-align: left;
+    color: gray;
+    padding: 30px;
+    font-size: 25px;
+}
