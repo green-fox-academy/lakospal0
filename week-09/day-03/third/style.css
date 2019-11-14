@@ -1,0 +1,46 @@
+body {
+    background: rgba(2, 2, 92, 0.815);
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    -webkit-box-shadow: 6px 4px 20px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 6px 4px 20px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 6px 4px 20px 0px rgba(0, 0, 0, 0.75);
+    border: none;
+    color: whitesmoke;
+    border-radius: 5px;
+    width: 150px;
+    height: 65px;
+    font-size: 23px;
+    margin-top: 150px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.item:focus {
+    outline: 0;
+}
+
+.item:active {
+    filter: brightness(70%);
+    transition: 0.2s;
+}
+
+.item:hover {
+    filter: brightness(90%);
+    transition: 0.2s;
+}
+
+.one {
+    background: black;
+}
+
+.two {
+    background: green;
+}
+
+.three {
+    background: red;
+}
