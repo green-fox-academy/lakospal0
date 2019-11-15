@@ -24,7 +24,6 @@ body {
 #header-pic1 {
     max-height: 250px;
     width: 100%;
-    z-index: 2;
 }
 
 #header-pic2 {
@@ -48,41 +47,73 @@ body {
 .main-content {
     background: white;
     display: inline-block;
-    border: 1px solid black;
-    min-height: 120px;
-    width: 62.3%;
+    width: 61.3%;
     margin-top: 20px;
     margin-left: 1.5%;
-}
-
-.text-area {
-    border: 1px solid red;
-    min-height: 120px;
+    margin-right: 0.5%;
 }
 
 .posts {
-    min-height: 120px;
-    width: 77%;
-    border: 1px solid black;
-    float: right;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 0.5px solid gray;
+}
+
+.post-title {
+    color: rgb(0, 128, 68);
+    padding: 10px;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+}
+
+.remove-post {
+    padding: 8px;
+    padding-top: 3px;
+    margin-left: 20px;
+}
+
+.modify-post {
+    padding: 8px;
+    padding-top: 3px;
 }
 
 .voting-area {
-    text-align: center;
-    padding-top: 50px;
-    height: 70px;
-    width: 24%;
-    border: 1px solid black;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+#upvote,
+#downvote {
+    display: flex;
+    justify-items: center;
+    align-self: center;
+}
+
+.vote-text {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+
+/*------------------------------------------------------*/
+
+h2 {
+    margin: 0px;
 }
 
 .sideContent {
     background: rgba(241, 237, 237, 0.932);
-    float: right;
     min-height: 220px;
     width: 33%;
-    border: 1px solid black;
     margin-top: 20px;
     margin-right: 1.5%;
+    margin-left: 0.5%;
+    float: right;
 }
 
 .about {
