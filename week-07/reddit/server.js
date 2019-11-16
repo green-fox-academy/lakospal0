@@ -1,6 +1,7 @@
 const mysql = require('mysql')
 const express = require('express');
 const path = require('path');
+var cors = require('cors');
 const PORT = 8080;
 
 let conn = mysql.createConnection({
@@ -20,6 +21,7 @@ conn.connect(function(err) {
 });
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 //first task
@@ -42,7 +44,8 @@ app.post('/posts', function(req, res) {
     const title = conn.escape(req.body.title);
     const url = conn.escape(req.body.url);
     //`UNIX_TIMESTAMP(timestamp)` idk where
-    const queryString = `INSERT INTO reddit.reddit_posts (title, url, score) VALUES (?, ?, '0')` [req.body.title, req.body.url]
+    const queryString = `INSERT INTO reddit.reddit_posts (title, url, score) VALUES ('${req.body.title}', '${req.body.url}', '0')`;
+    console.log(queryString);
     conn.query(queryString, (err, result) => {
         const query = `SELECT * FROM reddit.reddit_posts WHERE id=${result.insertId}`
         conn.query(query, (err, post) => {

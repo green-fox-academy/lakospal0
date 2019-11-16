@@ -18,14 +18,16 @@
             <div class="over-img-text">SPACE</div>
         </div>
         <div class="form-holder">
-            <form>
+            <form id="form" onsubmit="submitted();return false">
                 <label for="enter-title-area">title</label>
-                <input type="text" id="enter-title-area" required />
+                <input type="text" id="enter-title-area" />
                 <label for="URL">URL</label>
-                <input type="password" id="URL" name="password" required />
+                <input type="text" id="URL" name="URL" />
+                <input type="submit" class="new-post-btn" value="SUBMIT" />
             </form>
-            <button class="new-post-btn">SUBMIT</button>
+
         </div>
 </body>
+<script src="submit.js"></script>
 
 </html>

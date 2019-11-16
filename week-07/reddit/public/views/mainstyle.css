@@ -44,7 +44,7 @@ body {
     background: rgba(212, 205, 205, 0.171);
 }
 
-.main-content {
+#main-content {
     background: white;
     display: inline-block;
     width: 61.3%;
@@ -86,11 +86,18 @@ body {
     align-items: center;
 }
 
-#upvote,
-#downvote {
+.upvote,
+.downvote {
     display: flex;
     justify-items: center;
     align-self: center;
+    cursor: pointer;
+    transition: .2s ease all;
+}
+
+.upvote:hover,
+.downvote:hover {
+    opacity: .7;
 }
 
 .vote-text {
