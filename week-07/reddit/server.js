@@ -41,8 +41,6 @@ app.get('/posts', (req, res) => {
 
 // ADD NEW POST
 app.post('/posts', function(req, res) {
-    const title = conn.escape(req.body.title);
-    const url = conn.escape(req.body.url);
     //`UNIX_TIMESTAMP(timestamp)` idk where
     const queryString = `INSERT INTO reddit.reddit_posts (title, url, score) VALUES ('${req.body.title}', '${req.body.url}', '0')`;
     console.log(queryString);

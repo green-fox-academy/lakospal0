@@ -69,7 +69,7 @@ function upVote(id) {
     if (votingArray.indexOf(id) !== -1) {
         alert('u suck')
     } else {
-        makeCorsRequest('PUT', 'http://localhost:8080/posts/' + id + '/downvote');
+        makeCorsRequest('PUT', 'http://localhost:8080/posts/' + id + '/upvote');
     }
 }
 
