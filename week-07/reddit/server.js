@@ -84,6 +84,21 @@ app.put('/posts/:id/downvote', function(req, res) {
     })
 })
 
+app.delete("/posts/:id/remove", function(req, res) {
+    const query = `DELETE FROM reddit.reddit_posts WHERE id = ${req.params.id}`;
+    conn.query(query, (err, post) => {
+        console.log("Checking for errors:" + err);
+        const query = `SELECT * FROM post WHERE id = ${req.params.id}`;
+        conn.query(query, (err, post) => {
+            res.setHeader("Content-type", "application/json");
+            res.status(200);
+            res.send(JSON.stringify(post));
+            console.log(
+                `Client request: "Delete post with id: '${req.params.id}' from database".`
+            );
+        });
+    });
+});
 
 app.listen(PORT, () => {
     console.log(`The server is up and running on ${PORT}`);
