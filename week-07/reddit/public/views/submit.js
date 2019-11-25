@@ -1,9 +1,9 @@
 function submitted() {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open('POST', 'http://localhost:8080/posts', true);
 
     xhr.onload = function() {
-        var response = xhr.responseText;
+        let response = xhr.responseText;
         console.log(response);
         window.location.href = 'main.html';
     };
