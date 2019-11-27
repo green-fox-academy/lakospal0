@@ -34,7 +34,8 @@ app.post('/api/links', function(req, res) {
     let secretCode = Math.floor(Math.random() * 10000);
     let url = req.body.url;
     let alias = req.body.alias;
-    conn.query('INSERT INTO examlul VALUES (null,?,?,0,?)', [url, alias, secretCode], function(err, row) {
+    let query = 'INSERT INTO examlul VALUES (null,?,?,0,?);';
+    conn.query(query, [url, alias, secretCode], function(err, row) {
         conn.query('SELECT * FROM examlul', function(err, row) {
             res.setHeader('Content-Type', 'application/json');
             res.status(200);
@@ -63,39 +64,108 @@ app.get('/api/links', function(req, res) {
 });
 
 app.delete('/api/links/:id', function(req, res) {
+    req.accepts("application/json");
     let id = req.params.id;
     let secretCode = req.body.secretCode;
-    const query = 'DELETE * FROM examlul WHERE (secretcode=' + secretCode + ') AND (id=' + id + ');';
-    conn.query(query, function(err, row) {
-        console.log(row);
-        res.status(204);
-        res.send(row);
+    let query = 'SELECT * FROM examlul WHERE id=?';
+    conn.query(query, [id], function(err, del) {
+        if (err) {
+            res.status(500);
+            console.log(err.toString());
+            res.send('database bajvan');
+            return;
+        }
+        if (secretCode == del[0].secretCode) {
+            query = 'DELETE FROM examlul WHERE id=?';
+            conn.query(query, [id], function(err, row) {
+                if (err) {
+                    console.log(err.toString());
+                    res.send("database bentvan").status(500);
+                    return;
+                }
+                console.log(row);
+                res.sendStatus(204);
+            });
+
+        } else if (secretCode !== del[0].secretCode) {
+            console.log("error2")
+            res.sendStatus(403);
+        } else if (id == undefined) {
+            console.log("error2");
+            res.sendStatus(404);
+        }
     })
-
-    app.delete("/api/link/:id", function(req, res) {
-        let id = req.params.id;
-        let secretCode = req.body.secretCode;
-        let query = SELECT * FROM urlAliaser WHERE id = ? ;
-        conn.query(query, [id], function(err, del) {
-            if (secretCode == del[0].secretCode) {
-                query = DELETE FROM urlAliaser WHERE(id = ? );
-                conn.query(query, [id], (err, deleted) => {
-                    console.log(deleted);
-                    res.status(200);
-                });
-                res.send(Post with id: $ { id }
-                    has been deleted.);
-            } else if (secretCode !== del[0].secretCode) {
-                res.send(Incorrect secret code.);
-                res.status(405);
-            } else if (id == undefined) {
-                res.send(ID does not exist.);
-                res.status(404);
-            }
-        });
-    });
-
 })
+
+/* app.delete("/api/link/:id", function(req, res) {
+  req.accepts("application/json");
+  let id = req.params.id;
+  let secretCode = req.body.secretCode;
+  let query = SELECT * FROM urlAliaser WHERE id = ?;
+  conn.query(query, [id], function(err, del) {
+    if (err) {
+      console.log(err.toString());
+      res.status(500).send("Database error");
+      return;
+    }
+    console.log(del[0].secretCode);
+    console.log(secretCode);
+    if (secretCode == del[0].secretCode) {
+      query = DELETE FROM urlAliaser WHERE id = ?;
+      conn.query(query, [id], (err, deleted) => {
+        if (err) {
+          console.log(err.toString());
+          res.status(500).send("Database error");
+          return;
+        }
+        console.log(deleted);
+        res.sendStatus(204);
+      });
+    } else if (secretCode !== del[0].secretCode) {
+      console.log("error1");
+      res.sendStatus(403);
+    } else if (id == undefined) {
+      console.log("error2");
+      res.sendStatus(404);
+    }
+  });
+}); */
+
+app.put('/api/putin/:id', function(req, res) {
+    let id = req.params.id;
+    let url = req.body.url;
+    let query = 'UPDATE examlul SET url=? WHERE id=?;';
+    conn.query(query, [url, id], function(err, row) {
+        query = 'SELECT * FROM examlul WHERE id=?;';
+        conn.query(query, [id], function(err, row) {
+            res.send(row);
+        })
+    })
+})
+
+/*app.delete("/api/link/:id", function(req, res) {
+    let id = req.params.id;
+    let secretCode = req.body.secretCode;
+    let query = SELECT * FROM urlAliaser WHERE id = ? ;
+    conn.query(query, [id], function(err, del) {
+        if (secretCode == del[0].secretCode) {
+            query = DELETE FROM urlAliaser WHERE(id = ? );
+            conn.query(query, [id], (err, deleted) => {
+                console.log(deleted);
+                res.status(200);
+            });
+            res.send(Post with id: $ { id }
+                has been deleted.);
+        } else if (secretCode !== del[0].secretCode) {
+            res.send(Incorrect secret code.);
+            res.status(405);
+        } else if (id == undefined) {
+            res.send(ID does not exist.);
+            res.status(404);
+        }
+    });
+});*/
+
 
 app.listen(PORT, () => {
     console.log(`The server is up and running on ${PORT}`);
